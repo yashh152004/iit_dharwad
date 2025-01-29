@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AASHRAY - Women Safety Platform</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div class="login-container">
+        <h1>AASHRAY</h1>
+        <p class="tagline">She remembered who she was and the game changed!!</p>
+        <form id="loginForm">
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" required placeholder="Enter your email">
+            </div>
+            <div class="form-group">
+                <label for="password">Password</label>
+                <div class="password-input">
+                    <input type="password" id="password" required placeholder="Enter your password">
+                    <i class="toggle-password fas fa-eye"></i>
+                </div>
+            </div>
+            <button type="submit" class="sign-in">Sign In</button>
+        </form>
+        <p class="signup-text">Don't have an account? <a href="#" class="signup-link">Sign up</a></p>
+    </div>
+
+    <div class="main-website">
+        <nav>
+            <div class="logo">AASHRAY</div>
+            <div class="nav-links">
+                <a href="#" class="active">HOME</a>
+                <a href="#">ABOUT</a>
+                <a href="#">RECORDS</a>
+                <a href="#">HELPDESK</a>
+            </div>
+        </nav>
+        <div class="content">
+            <!-- Content will be dynamically loaded here -->
+        </div>
+    </div>
+    <script src="main.js"></script>
+</body>
+</html>
