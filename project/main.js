@@ -227,7 +227,7 @@ document.addEventListener('DOMContentLoaded', () => {
                                     <button>${sosActivated ? 'ACTIVATED' : 'SOS'}</button>
                                 </div>
                                 <h2>Alert Zone</h2>
-                                <p class="emergency-text">For Emergency Call: 100</p>
+                                <p class="emergency-text"></p>
                             </div>
 
                             <div class="location-section">
@@ -269,8 +269,40 @@ document.addEventListener('DOMContentLoaded', () => {
                 break;
             case 'about':
                 content = `
-                    <div class="page-content">
+                <div class="page-content">
                         <h1>About AASHRAY</h1>
+                        <div class="about-section">
+                            <div class="mission-section">
+                                <h2><ul>About</h2></ul>
+                                <p>Aashray is a cutting-edge women’s safety application designed to provide real-time protection, emergency assistance, and AI-powered safety insights. Our mission is to empower women with instant access to help, ensuring they feel safe and secure anytime, anywhere.
+                                </P>
+                                <p>
+                                </p>
+
+
+<h><h3>🚀 Key Features of Aashray:</b></h3>
+<p>🔴 SOS Emergency Alert: Instantly notifies the nearest police station and emergency contacts with real-time location tracking.</p>
+<p>📍 Safe Route Navigation: AI-powered route suggestions to guide users through the safest paths based on crime data.</p>
+<p>📷 Threat Detection with AI: Uses Computer Vision to analyze images/videos for potential threats like weapons or unsafe situations.</p>
+<p>📝 Incident Reporting: Quick and easy way to report harassment or unsafe experiences, helping build a safer community.</p>
+
+<div class="page-content">
+                        <h1></h1>
+                        <div class="about-section">
+                            <div class="mission-section">
+                                <h4>Our Vision</h4>
+                                <p> At Aashray, we believe in harnessing the power of technology and AI to create a secure and supportive environment for women. Your safety is our priority, and we are committed to making the world a safer place—one alert at a time.</p>
+</p
+</div>
+                        <h1></h1>
+                        <div class="about-section">
+                            <div class="mission-section">
+                                <h2>
+                                <p>Safe. Stay Empowered. 💜</p></h2>
+</p
+</div>
+                    <div class="page-content">
+                        <h1></h1>
                         <div class="about-section">
                             <div class="mission-section">
                                 <h2>Our Mission</h2>
@@ -441,11 +473,13 @@ document.addEventListener('DOMContentLoaded', () => {
                                         <p>Chat with our support team</p>
                                         <button class="chat-btn" onclick="initializeChat()">Start Chat</button>
                                     </div>
+                                    
+
                                     <div class="channel-card">
                                         <i class="fas fa-envelope"></i>
                                         <h3>Email Support</h3>
-                                        <p>support@aashray.com</p>
-                                        <button class="email-btn" onclick="window.location.href='mailto:support@aashray.com'">
+                                        <p>support@yashwardhankumar15@gmail.com</p>
+                                        <button class="email-btn" onclick="window.location.href='mailto:support@yashwardhankumar15@gmail.com'">
                                             Send Email
                                         </button>
                                     </div>
@@ -474,6 +508,7 @@ document.addEventListener('DOMContentLoaded', () => {
                                     </div>
                                     <button type="submit" class="submit-btn">Send Message</button>
                                 </form>
+                                
                             </div>
                         </div>
                     </div>
