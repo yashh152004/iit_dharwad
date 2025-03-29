@@ -1,3 +1,20 @@
+fetch('/.netlify/functions/getEnv')
+  .then(response => response.json())
+  .then(data => {
+      const apiUrl = data.NOMINATIM_API_URL;
+      console.log("Nominatim API URL:", apiUrl);
+
+      // Example usage (Replace with actual lat/lon values)
+      const latitude = 28.7041;
+      const longitude = 77.1025;
+      
+      fetch(`${apiUrl}&lat=${latitude}&lon=${longitude}`)
+        .then(response => response.json())
+        .then(data => console.log("Reverse Geocoding Data:", data))
+        .catch(error => console.error("Error fetching geolocation:", error));
+  })
+  .catch(error => console.error("Error fetching env variable:", error));
+
 document.addEventListener('DOMContentLoaded', () => {
     const loginForm = document.getElementById('loginForm');
     const loginContainer = document.querySelector('.login-container');
@@ -547,17 +564,21 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function updateLocationInfo(latitude, longitude) {
         // Reverse geocoding to get address
-        fetch(`https://nominatim.openstreetmap.org/reverse?format=json&lat=${latitude}&lon=${longitude}`)
-            .then(response => response.json())
-            .then(data => {
-                document.getElementById('current-location').innerHTML = `
-                    <p><strong>Address:</strong> ${data.display_name}</p>
-                    <p><strong>Coordinates:</strong> ${latitude.toFixed(6)}, ${longitude.toFixed(6)}</p>
-                `;
-            })
-            .catch(error => {
-                console.error('Error fetching address:', error);
-            });
+        fetch(`https://nominatim.openstreetmap.org/reverse?format=json&lat=${latitude}&lon=${longitude}`, {
+            headers: {
+                'User-Agent': 'YourAppName (your@email.com)' // Replace with your app details
+            }
+        })
+        .then(response => response.json())
+        .then(data => {
+            document.getElementById('current-location').innerHTML = `
+                <p><strong>Address:</strong> ${data.display_name}</p>
+                <p><strong>Coordinates:</strong> ${latitude.toFixed(6)}, ${longitude.toFixed(6)}</p>
+            `;
+        })
+        .catch(error => {
+            console.error('Error fetching address:', error);
+        });
     }
 
     function updateMap(latitude, longitude) {
