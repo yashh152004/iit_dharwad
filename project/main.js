@@ -1,19 +1,3 @@
-fetch('/.netlify/functions/getEnv')
-  .then(response => response.json())
-  .then(data => {
-      const apiUrl = data.NOMINATIM_API_URL;
-      console.log("Nominatim API URL:", apiUrl);
-
-      // Example usage (Replace with actual lat/lon values)
-      const latitude = 28.7041;
-      const longitude = 77.1025;
-      
-      fetch(`${apiUrl}&lat=${latitude}&lon=${longitude}`)
-        .then(response => response.json())
-        .then(data => console.log("Reverse Geocoding Data:", data))
-        .catch(error => console.error("Error fetching geolocation:", error));
-  })
-  .catch(error => console.error("Error fetching env variable:", error));
 
 document.addEventListener('DOMContentLoaded', () => {
     const loginForm = document.getElementById('loginForm');
