@@ -7,6 +7,23 @@ document.addEventListener('DOMContentLoaded', () => {
     const navLinks = document.querySelectorAll('.nav-links a');
     let sosActivated = false;
     let currentPage = 'home';
+// Fetch the API URL from the Vercel serverless function
+fetch('/api/getEnv')
+  .then(response => response.json())
+  .then(data => {
+      const apiUrl = data.NOMINATIM_API_URL; // Get the API URL from function
+      console.log("Nominatim API URL:", apiUrl);
+
+      // Example usage (Replace with actual lat/lon values)
+      const latitude = 28.7041;
+      const longitude = 77.1025;
+      
+      fetch(`${apiUrl}&lat=${latitude}&lon=${longitude}`)
+        .then(response => response.json())
+        .then(data => console.log("Reverse Geocoding Data:", data))
+        .catch(error => console.error("Error fetching geolocation:", error));
+  })
+  .catch(error => console.error("Error fetching env variable:", error));
 
     // Store registered users
     let registeredUsers = JSON.parse(localStorage.getItem('registeredUsers')) || [];
